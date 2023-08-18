@@ -23,16 +23,9 @@ function runPython(client, commande, montant) {
   console.log(client)
   console.log(commande)
   console.log(montant)
-  $.ajax({
-    type:'POST',
-    url:'../python/main.py',
-    data: {param: client}, //, commande: commande, montant: montant},
-    success: callbackFunc
-  })
-}
 
-function callbackFunc(response) {
-  // do something with the response
-  console.log(response);
-}
+  const execSync = require('child_process').execSync;
 
+  const output = execSync('python3 ../python/main.py ${client} ${commande} ${montant}', { encoding: 'utf-8' });
+  console.log('Output was:\n', output);
+}
