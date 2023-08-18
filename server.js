@@ -11,7 +11,7 @@ fs.readFile('./html/main.html', function(error, html) {
        response.writeHeader(200, {"Content-Type": "text/html"});
        response.write(html);
        response.end();
-   }).listen(PORT, function() {
+   }).listen(PORT, '0.0.0.0', function() {
        console.log(`Server running at http://localhost:${PORT}`);
    });
 });
