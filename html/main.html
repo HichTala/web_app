@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<link rel="stylesheet" href="../css/main.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="../js/main.js"></script>
+
+<div class="wrapper">
+  <h1>Titre</h1>
+  <p>(ou pas hein c'est pas obligatoire)</p>
+
+  <div class="btn-groups">
+    <div class="btn-red-tr">
+      <button class="print-button" onclick="openForm()"><span class="print-icon"></span></button>
+    </div>
+    <div class="btn-green-tr">PayPal:</div>
+    <div class="btn-blue-tr">Hicham Tala</div>
+
+      <div class="form-popup" id="formContainer">
+        <form action="" class="form-container" id="myForm">
+          <h1>Login</h1>
+
+<!--          <label for="client"><b>Email</b></label>-->
+          <input type="text" placeholder="Client" id="client" required>
+
+<!--          <label for="psw"><b>Password</b></label>-->
+          <input type="text" placeholder="Commande" id="commande" required>
+          <input type="text" placeholder="Montant" id="montant" required>
+
+          <button type="submit" class="btn">Print</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+<!--    <button class="print-button"><span class="print-icon"></span></button>-->
+
+<!--    <div class="btn-red-qa">danger</div>-->
+<!--    <div class="btn-green-qa">success</div>-->
+<!--    <div class="btn-blue-qa">pirmary</div>-->
+
+  </div>
+</div>
+
+<!-- A button to open the popup form -->
+<!--<button class="open-button" onclick="openForm()">Open Form</button>-->
+
+<!-- The form -->
+
+
+</html>
