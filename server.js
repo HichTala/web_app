@@ -2,7 +2,7 @@ console.log('Starting the server...');
 var http = require('http')
 var fs = require('fs')
 
-const PORT = 8888
+const PORT = 80
 
 fs.readFile('./html/main.html', function(error, html) {
    if (error) throw error;
