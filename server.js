@@ -1,7 +1,7 @@
 var http = require('http')
 var fs = require('fs')
 
-const PORT = 80
+const PORT = 8080
 
 fs.readFile('./html/main.html', function(error, html) {
    if (error) throw error;
