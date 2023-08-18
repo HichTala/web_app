@@ -1,1 +1,1 @@
-python3 ../python/main.py aklzjf alf alfj
+python3 ../python/main.py $1 $2 $3
