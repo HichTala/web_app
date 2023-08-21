@@ -10,7 +10,7 @@ function openForm() {
     let commande = document.getElementById("commande");
     let montant = document.getElementById("montant");
 
-    runPython(client.value, commande.value, montant.value)
+    // runPython(client.value, commande.value, montant.value)
   });
 
 }
