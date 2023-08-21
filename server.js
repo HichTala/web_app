@@ -8,7 +8,6 @@ const PORT = 8080;
 http.createServer(function(request, response) {
     console.log('Request received');
     console.log(request)
-    console.log(request)
 
     // Parse the URL to determine which file to serve
     var filePath = '.' + request.url;
