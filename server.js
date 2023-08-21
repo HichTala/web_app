@@ -19,7 +19,7 @@ http.createServer(function(request, response) {
             let commande = fields.commande
             let montant = fields.montant
 
-            const output = execSync('python3 ../python/main.py ' + fields.client + ' ' + ' ' + fields.commande + ' ' + fields.montant, { encoding: 'utf-8' });
+            const output = execSync('python3 python/main.py ' + fields.client + ' ' + ' ' + fields.commande + ' ' + fields.montant, { encoding: 'utf-8' });
             console.log('Output was:\n', output);
 
             fs.rename(oldpath, newpath, function (err) {
