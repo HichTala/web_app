@@ -1,16 +1,28 @@
 console.log('Starting the server...');
 var http = require('http');
 var fs = require('fs');
-var path = require('path'); // Import the path module for working with file paths
+var path = require('path');
+var formidable = require('formidable');
 
 const PORT = 8080;
 
 http.createServer(function(request, response) {
     console.log('Request received');
-    console.log(request)
+
+    if (request.url == '/fileupload') {
+        var form = new formidable.IncomingForm();
+        form.parse(request, function (err, fields, files) {
+            res.write('File uploaded');
+            res.end();
+        });
+        console.log(form)
+        var filePath = './';
+
+    } else {
+        var filePath = '.' + request.url;
+    }
 
     // Parse the URL to determine which file to serve
-    var filePath = '.' + request.url;
     if (filePath === './') {
         filePath = './html/main.html'; // Default to serving main.html
     }
@@ -43,3 +55,10 @@ http.createServer(function(request, response) {
 }).listen(PORT, function() {
     console.log(`Server running at http://localhost:${PORT}`);
 });
+
+
+
+const execSync = require('child_process').execSync;
+
+const output = execSync('python3 ../python/main.py ${client} ${commande} ${montant}', { encoding: 'utf-8' });
+console.log('Output was:\n', output);
