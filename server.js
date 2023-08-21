@@ -12,11 +12,16 @@ http.createServer(function(request, response) {
     if (request.url == '/fileupload') {
         var form = new formidable.IncomingForm();
         form.parse(request, function (err, fields, files) {
-            console.log("files :")
-            console.log(fields.client)
-            console.log(fields['client'])
-            var oldpath = files.filetoupload.filepath;
-            var newpath = 'C:/Users/Your Name/' + files.filetoupload.originalFilename;
+
+            const execSync = require('child_process').execSync;
+
+            let client = fields.client
+            let commande = fields.commande
+            let montant = fields.montant
+
+            const output = execSync('python3 ../python/main.py ' + fields.client + ' ' + ' ' + fields.commande + ' ' + fields.montant, { encoding: 'utf-8' });
+            console.log('Output was:\n', output);
+
             fs.rename(oldpath, newpath, function (err) {
                 if (err) throw err;
                 res.write('File uploaded and moved!');
@@ -63,10 +68,3 @@ http.createServer(function(request, response) {
 }).listen(PORT, function() {
     console.log(`Server running at http://localhost:${PORT}`);
 });
-
-
-
-// const execSync = require('child_process').execSync;
-//
-// const output = execSync('python3 ../python/main.py ${client} ${commande} ${montant}', { encoding: 'utf-8' });
-// console.log('Output was:\n', output);
