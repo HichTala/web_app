@@ -3,19 +3,19 @@ function openForm() {
 
   let form = document.getElementById("myForm")
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    let client = document.getElementById("client");
-    let commande = document.getElementById("commande");
-    let montant = document.getElementById("montant");
-
-    console.log(client.value)
-    console.log(commande.value)
-    console.log(montant.value)
-
-    // runPython(client.value, commande.value, montant.value)
-  });
+  // form.addEventListener("submit", (e) => {
+  //   e.preventDefault();
+  //
+  //   let client = document.getElementById("client");
+  //   let commande = document.getElementById("commande");
+  //   let montant = document.getElementById("montant");
+  //
+  //   console.log(client.value)
+  //   console.log(commande.value)
+  //   console.log(montant.value)
+  //
+  //   // runPython(client.value, commande.value, montant.value)
+  // });
 
 }
 
