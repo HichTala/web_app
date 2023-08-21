@@ -10,6 +10,10 @@ function openForm() {
     let commande = document.getElementById("commande");
     let montant = document.getElementById("montant");
 
+    console.log(client)
+    console.log(commande)
+    console.log(montant)
+
     // runPython(client.value, commande.value, montant.value)
   });
 
