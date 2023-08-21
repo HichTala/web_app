@@ -13,8 +13,8 @@ http.createServer(function(request, response) {
         var form = new formidable.IncomingForm();
         form.parse(request, function (err, fields, files) {
             console.log("files :")
-            console.log(files)
-            console.log(fields)
+            console.log(fields.client)
+            console.log(fields['client'])
             var oldpath = files.filetoupload.filepath;
             var newpath = 'C:/Users/Your Name/' + files.filetoupload.originalFilename;
             fs.rename(oldpath, newpath, function (err) {
