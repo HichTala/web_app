@@ -58,7 +58,7 @@ http.createServer(function(request, response) {
 
 
 
-const execSync = require('child_process').execSync;
-
-const output = execSync('python3 ../python/main.py ${client} ${commande} ${montant}', { encoding: 'utf-8' });
-console.log('Output was:\n', output);
+// const execSync = require('child_process').execSync;
+//
+// const output = execSync('python3 ../python/main.py ${client} ${commande} ${montant}', { encoding: 'utf-8' });
+// console.log('Output was:\n', output);
