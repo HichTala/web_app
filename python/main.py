@@ -1,15 +1,14 @@
 import argparse
-import os
 
 import datetime
 import qrcode
-from reportlab.pdfgen.canvas import Canvas
-from reportlab.lib.pagesizes import A4
-from reportlab.lib.units import inch
-from reportlab.graphics.shapes import Drawing, Rect
-from reportlab.lib import colors
 
 import barcode
+
+from reportlab.pdfgen.canvas import Canvas
+from reportlab.lib.pagesizes import A4
+
+from reportlab.lib import colors
 
 barcode.base.Barcode.default_writer_options['write_text'] = False
 
@@ -54,7 +53,8 @@ def main(client, commande, montant):
     code39 = barcode.get('code39', commande, writer=barcode.writer.ImageWriter())
     barcode_image = code39.render({'background': 'beige'})
 
-    canvas.drawInlineImage(barcode_image, 74 + 300 + 5, A4[1] - 72 - 100 - 37, width=A4[0] - 300 - 72 - 72 - 10, height=75)
+    canvas.drawInlineImage(barcode_image, 74 + 300 + 5, A4[1] - 72 - 100 - 37, width=A4[0] - 300 - 72 - 72 - 10,
+                           height=75)
 
     canvas.save()
     return 0
