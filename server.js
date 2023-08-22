@@ -16,7 +16,6 @@ http.createServer(function(request, response) {
             const execSync = require('child_process').execSync;
 
             const output = execSync('python3 python/main.py ' + fields.client + ' ' + ' ' + fields.commande + ' ' + fields.montant, { encoding: 'utf-8' });
-            console.log('Output was:\n', output);
         });
         var filePath = './pdf.pdf';
 
