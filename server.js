@@ -18,7 +18,7 @@ http.createServer(function(request, response) {
             const output = execSync('python3 python/main.py ' + fields.client + ' ' + ' ' + fields.commande + ' ' + fields.montant, { encoding: 'utf-8' });
             console.log('Output was:\n', output);
         });
-        var filePath = './';
+        var filePath = './pdf.pdf';
 
     } else {
         var filePath = '.' + request.url;
@@ -36,6 +36,7 @@ http.createServer(function(request, response) {
         '.html': 'text/html',
         '.js': 'text/javascript',
         '.css': 'text/css',
+        '.pdf': 'application/pdf'
     };
     contentType = mimeTypes[extname] || 'application/octet-stream';
 
