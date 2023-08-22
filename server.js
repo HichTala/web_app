@@ -18,7 +18,6 @@ http.createServer(function(request, response) {
             const output = execSync('python3 python/main.py ' + fields.client + ' ' + ' ' + fields.commande + ' ' + fields.montant, { encoding: 'utf-8' });
             console.log('Output was:\n', output);
         });
-        console.log(form)
         var filePath = './';
 
     } else {
@@ -47,7 +46,7 @@ http.createServer(function(request, response) {
                 response.end('File not found');
             } else {
                 response.writeHead(500);
-                response.end('Sorry, check with the site admin for error: ' + error.code + ' ..\n');
+                response.end('Sorry, check with the site admin (HichTala) for error: ' + error.code + ' ..\n');
             }
         } else {
             response.writeHead(200, {'Content-Type': contentType});
